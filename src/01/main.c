@@ -23,11 +23,24 @@ int main() {
         return 1;
     }
 
-    fread(buffer, 1, length, handle);
+    // reading line by line would actually simplify this a lot
+    // then i can just strtol or check for empty line
+    fread(buffer, 1, length, handle); // could read line-by-line, but this is easier
     fclose(handle);
 
     buffer[length] = '\0';
 
-    printf("%s", buffer);
+    int current_calories = 0;
+    int total_calories = 0;
+    int record_calories = 0;
+
+    for (int i = 0; i < length; i++) {
+        if (buffer[i] == '\n') {
+            if (total_calories > record_calories) {
+                record_calories = total_calories;
+            }
+            total_calories = 0;
+        }
+    }
     return 0;
 }

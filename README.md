@@ -2,6 +2,8 @@
 
 This repository contains my solutions to the [Advent of Code](https://adventofcode.com/) puzzles, all in C!
 
+**Heavy puzzle spoilers ahead! This is your only warning!**
+
 ## Building
 
 *The makefile will build every program at once! If you don't want this, select the targets you want in the build command (step 5).*

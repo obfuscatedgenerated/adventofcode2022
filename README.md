@@ -10,7 +10,7 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 2. Create a build directory: `mkdir build`
 3. Change into the build directory: `cd build`
 4. Run CMake configuration step: `cmake ..` (you can choose a generator with the -G option. I recommend Unix Makefiles on Unix and MinGW Makefiles on Windows)
-5. Run the build step: `cmake --build .` (you can specify a target with the --target option, e.g. `cmake --build . --target 01`)
+5. Run the build step: `cmake --build .` (you can specify a target with the --target option, e.g. `cmake --build . --target 01-part1`)
 6. Execute the program! You'll want to keep the copied input file(s) in the same directory as the executable.
 
 ## Directory

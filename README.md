@@ -20,5 +20,7 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 * [Problem](https://adventofcode.com/2022/day/1)
 * [Solution](src/01/)
 
+*Targets: 01-part1, 01-part2*
+
 ### 02 - ???
 

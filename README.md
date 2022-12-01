@@ -4,6 +4,8 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 
 **Heavy puzzle spoilers ahead! This is your only warning!**
 
+Note: the input *should* be different for every participant. You should edit the input files in each source directory BEFORE running the CMake configuration step (or edit the outputted file from that step).
+
 ## Building
 
 *The makefile will build every program at once! If you don't want this, select the targets you want in the build command (step 5).*

@@ -16,7 +16,7 @@ int main() {
 
     int current_calories = 0;
 
-    // if this wasn't just a fun event, I'd use a linked list here
+    // if this wasn't just a fun event, I'd use a linked (?) list here
     // and a bunch of magic c wizardry, so the program could
     // handle any number of elves
     int record_calories_1st = 0;

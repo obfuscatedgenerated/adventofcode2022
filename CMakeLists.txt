@@ -11,3 +11,5 @@ add_executable(01-part2 src/01/part2.c)
 file(COPY src/01/01.txt DESTINATION ${CMAKE_BINARY_DIR})
 
 # DAY 02
+
+add_executable(02-part1 src/02/part1.c)

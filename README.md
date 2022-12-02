@@ -6,7 +6,7 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 
 Note: the input *should* be different for every participant. You should edit the input files in each source directory BEFORE running the CMake configuration step (or edit the outputted file from that step).
 
-All solutions are tested on Windows 10 (64bit, GCC 12 with MinGW) and Raspberry Pi OS (armhf Debian Buster, GCC 8.3.0 with Unix Makefiles).
+All solutions are tested on Windows 10 (64bit, GCC 12 with MinGW and Ninja) and Raspberry Pi OS (armhf Debian Buster, GCC 8.3.0 with Unix Makefiles).
 
 ## Building
 
@@ -15,7 +15,7 @@ All solutions are tested on Windows 10 (64bit, GCC 12 with MinGW) and Raspberry 
 1. Clone the repository: `git clone https://github.com/obfuscatedgenerated/adventofcode2022.git`
 2. Create a build directory: `mkdir build`
 3. Change into the build directory: `cd build`
-4. Run CMake configuration step: `cmake ..` (you can choose a generator with the -G option. I recommend Unix Makefiles on Unix and MinGW Makefiles on Windows)
+4. Run CMake configuration step: `cmake ..` (you can choose a generator with the -G option. I recommend Unix Makefiles on Unix and MinGW Makefiles or Ninja on Windows)
 5. Run the build step: `cmake --build .` (you can specify a target with the --target option, e.g. `cmake --build . --target 01-part1`)
 6. Execute the program! You'll want to keep the copied input file(s) in the same directory as the executable.
 

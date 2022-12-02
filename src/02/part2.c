@@ -40,13 +40,6 @@ enum target_result_e {
 
 typedef enum target_result_e target_result_et;
 
-enum bool_e {
-    FALSE = 0,
-    TRUE = 1,
-};
-
-typedef enum bool_e bool_et;
-
 // there are much better ways to do this, but the task isn't to make the best rps
 // probably my enums are defined badly, so I have to do these weird checks
 

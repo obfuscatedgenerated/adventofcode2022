@@ -28,5 +28,9 @@ All solutions are tested on Windows 10 (64bit, GCC 12 with MinGW) and Raspberry 
 
 *Targets: 01-part1, 01-part2*
 
-### 02 - ???
+### 02 - Rock Paper Scissors
 
+* [Problem](https://adventofcode.com/2022/day/2)
+* [Solution](src/02/)
+
+*Targets: 02-part1, 02-part2*

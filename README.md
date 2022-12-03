@@ -39,3 +39,5 @@ All solutions are tested on Windows 10 (64bit, GCC 12 with MinGW and Ninja) and 
 
 * [Problem](https://adventofcode.com/2022/day/3)
 * [Solution](src/03/)
+
+*Targets: 03-part1, 03-part2*

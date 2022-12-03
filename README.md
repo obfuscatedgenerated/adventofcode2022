@@ -34,3 +34,8 @@ All solutions are tested on Windows 10 (64bit, GCC 12 with MinGW and Ninja) and 
 * [Solution](src/02/)
 
 *Targets: 02-part1, 02-part2*
+
+### 03 - Rucksack Reorganization
+
+* [Problem](https://adventofcode.com/2022/day/3)
+* [Solution](src/03/)

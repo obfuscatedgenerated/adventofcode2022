@@ -8,23 +8,6 @@
 
 #define ALPHA_ORDER "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-enum bool_e {
-    FALSE = 0,
-    TRUE = 1,
-};
-
-typedef enum bool_e bool_et;
-
-bool_et contains_char(const char *str, char c, size_t string_len) {
-    for (int i = 0; i < string_len; i++) {
-        if (str[i] == c) {
-            return TRUE;
-        }
-    }
-
-    return FALSE;
-}
-
 char *find_matching_chars_threes(const char *str1, const char *str2, const char *str3) {
     size_t str1_len = strlen(str1);
     size_t str2_len = strlen(str2);

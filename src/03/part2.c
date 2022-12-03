@@ -125,6 +125,8 @@ int main() {
             free(matching_chars);
         }
     }
+    
+    fclose(handle);
 
     free(bag1);
     free(bag2);
@@ -149,7 +151,5 @@ int main() {
     free(found_matches);
 
     printf("Total priority: %zu\n", total_priority);
-
-    fclose(handle);
     return 0;
 }

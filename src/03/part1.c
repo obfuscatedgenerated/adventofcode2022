@@ -25,32 +25,30 @@ bool_et contains_char(const char *str, char c, size_t string_len) {
     return FALSE;
 }
 
-char *find_matching_chars(const char *str1, const char *str2, size_t string_len) {
-    char *matching_chars = malloc(string_len * sizeof(char));
-    int matching_chars_index = 0;
+char *find_matching_chars(const char *str1, const char *str2) {
+    size_t str1_len = strlen(str1);
+    size_t str2_len = strlen(str2);
 
-    // first pass, compare string1's chars to string2
-    for (int i = 0; i < string_len; i++) {
-        if(contains_char(str2, str1[i], string_len)) {
-            // check if the char is already in the matching_chars array
-            if (!contains_char(matching_chars, str1[i], string_len)) {
-                matching_chars[matching_chars_index] = str1[i];
-                matching_chars_index++;
-            }
-        }
+    int occurences1[CHAR_MAX] = {0};
+    int occurences2[CHAR_MAX] = {0};
+
+    for (int i = 0; i < str1_len; i++) {
+        occurences1[str1[i]]++;
     }
 
-    // not required! it would be common to both strings!
-    // second pass, compare string2's chars to string1
-    //for (int i = 0; i < string_len; i++) {
-    //    if(contains_char(str1, str2[i], string_len)) {
-    //        // check if the char is already in the matching_chars array
-    //        if (!contains_char(matching_chars, str2[i], string_len)) {
-    //            matching_chars[matching_chars_index] = str2[i];
-    //            matching_chars_index++;
-    //        }
-    //    }
-    //}
+    for (int i = 0; i < str2_len; i++) {
+        occurences2[str2[i]]++;
+    }
+
+    char *matching_chars = malloc((CHAR_MAX + 1) * sizeof(char));
+    int matching_chars_index = 0;
+
+    for (char i = 0; i < CHAR_MAX; i++) {
+        if (occurences1[i] > 0 && occurences2[i] > 0) {
+            matching_chars[matching_chars_index] = i;
+            matching_chars_index++;
+        }
+    }
 
     matching_chars[matching_chars_index] = '\0';
 
@@ -76,7 +74,8 @@ int main() {
         return 1;
     }
 
-    char *found_matches = malloc((FILE_LEN + 1) * sizeof(char));
+    char found_matches[FILE_LEN];
+    int found_matches_index = 0;
 
     // read the file line by line
     char buffer[MAX_LEN];
@@ -97,13 +96,13 @@ int main() {
         second[len / 2] = '\0'; // terminate the string
 
         // find the matching characters
-        char *matching_chars = find_matching_chars(first, second, len / 2);
+        char *matching_chars = find_matching_chars(first, second);
 
         // add the matching chars to the found_matches array
-        if (strcmp(found_matches, "") == 0) {
-            strcpy(found_matches, matching_chars);
-        } else {
-            strcat(found_matches, matching_chars);
+        size_t matching_chars_len = strlen(matching_chars);
+        for (int i = 0; i < matching_chars_len; i++) {
+            found_matches[found_matches_index] = matching_chars[i];
+            found_matches_index++;
         }
 
         free(first);
@@ -111,9 +110,13 @@ int main() {
         free(matching_chars);
     }
 
+    fclose(handle);
+
+    found_matches[found_matches_index] = '\0';
+
     printf("Found matches: %s\n", found_matches);
 
-    size_t matches_count = strlen(found_matches);
+    size_t matches_count = found_matches_index;
     size_t total_priority = 0;
 
     for (int i = 0; i < matches_count; i++) {
@@ -123,13 +126,10 @@ int main() {
             total_priority += priority;
         } else {
             fprintf(stderr, "Error: %c not found in alphabet!\n", found_matches[i]);
+            return 1;
         }
     }
 
-    free(found_matches);
-
     printf("Total priority: %zu\n", total_priority);
-
-    fclose(handle);
     return 0;
 }

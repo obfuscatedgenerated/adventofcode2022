@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <limits.h>
 
 #define MAX_LEN 32 // maximum length of a string (line in the file)
 #define FILE_LEN 1000 // file is 1000 lines long

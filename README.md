@@ -41,3 +41,10 @@ All solutions are tested on Windows 10 (64bit, GCC 12 with MinGW and Ninja) and 
 * [Solution](src/03/)
 
 *Targets: 03-part1, 03-part2*
+
+### 04 - Camp Cleanup
+
+* [Problem](https://adventofcode.com/2022/day/4)
+* [Solution](src/04/)
+
+*Targets: 04-part1, 04-part2*

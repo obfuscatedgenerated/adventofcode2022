@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 #define MAX_LEN 32 // maximum length of a string (line in the file)
 #define FILE_LEN 1000 // file is 1000 lines long
@@ -40,8 +41,8 @@ int main() {
         unsigned int elf2_start_int = strtol(elf2_start, NULL, 10);
         unsigned int elf2_end_int = strtol(elf2_end, NULL, 10);
 
-        // check if the ranges overlap ENTIRELY
-        if (elf1_start_int <= elf2_start_int && elf1_end_int >= elf2_end_int || elf2_start_int <= elf1_start_int && elf2_end_int >= elf1_end_int) {
+        // check if the ranges overlap AT ALL
+        if (elf1_start_int <= elf2_start_int && elf1_end_int >= elf2_start_int || elf2_start_int <= elf1_start_int && elf2_end_int >= elf1_start_int) {
             overlaps++;
         }
     }

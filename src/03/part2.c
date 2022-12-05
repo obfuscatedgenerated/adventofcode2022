@@ -4,7 +4,7 @@
 #include <limits.h>
 
 #define MAX_LEN 64 // maximum length of a string (line in the file)
-#define HEAD_LEN 300 // file is 300 lines long
+#define FILE_LEN 300 // file is 300 lines long
 
 #define ALPHA_ORDER "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -63,7 +63,7 @@ int main() {
         return 1;
     }
 
-    char *found_matches = malloc((HEAD_LEN + 1) * sizeof(char));
+    char *found_matches = malloc((FILE_LEN + 1) * sizeof(char));
     strcpy(found_matches, "");
 
     char *bag1 = malloc(MAX_LEN * sizeof(char));

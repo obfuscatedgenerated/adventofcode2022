@@ -30,3 +30,11 @@ add_executable(04-part1 src/04/part1.c)
 add_executable(04-part2 src/04/part2.c)
 
 file(COPY src/04/04.txt DESTINATION ${CMAKE_BINARY_DIR})
+
+# DAY 05
+
+add_executable(05-part1 src/05/part1.c)
+#add_executable(05-part2 src/05/part2.c)
+
+file(COPY src/05/05-head.txt DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY src/05/05-moves.txt DESTINATION ${CMAKE_BINARY_DIR})

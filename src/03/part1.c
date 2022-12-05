@@ -4,7 +4,7 @@
 #include <limits.h>
 
 #define MAX_LEN 64 // maximum length of a string (line in the file)
-#define FILE_LEN 300 // file is 300 lines long
+#define HEAD_LEN 300 // file is 300 lines long
 
 #define ALPHA_ORDER "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -57,7 +57,7 @@ int main() {
         return 1;
     }
 
-    char found_matches[FILE_LEN];
+    char found_matches[HEAD_LEN];
     int found_matches_index = 0;
 
     // read the file line by line

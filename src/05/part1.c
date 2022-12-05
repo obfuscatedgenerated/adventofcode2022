@@ -2,9 +2,22 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_LEN 32 // maximum length of a string (line in the file)
+#define MAX_LEN 64 // maximum length of a string (line in the file)
 #define HEAD_LEN 9 // file is 9 lines long
 #define MOVE_LEN 501 // file is 501 lines long
+
+void reverse(char arr[], unsigned int n) {
+    char reversed[n];
+
+    for (unsigned int i = 0; i < n; i++) {
+        reversed[n - 1 - i] = arr[i];
+    }
+
+    for (unsigned int i = 0; i < n; i++) {
+        arr[i] = reversed[i];
+    }
+}
+
 
 int main() {
     FILE *head_handle;
@@ -39,7 +52,9 @@ int main() {
     }
 
     char move_buffer[MAX_LEN];
+    int move_idx = 0;
     while (fgets(move_buffer, MAX_LEN, move_handle) != NULL) {
+        move_idx++;
         // remove the newline character
         move_buffer[strcspn(move_buffer, "\n")] = 0;
 
@@ -59,18 +74,21 @@ int main() {
         unsigned int source_int = strtol(source_str, NULL, 10) - 1;
         unsigned int destination_int = strtol(destination_str, NULL, 10) - 1;
 
-        unsigned int height = strlen(crates[source_int]);
+        unsigned int src_height = strlen(crates[source_int]);
 
         // pickup the crates with a stack and remove them from the source
         char stack[crates_int];
-        for (int i = 0; i < crates_int; i++) {
-            stack[i] = crates[source_int][height - crates_int + i];
-            crates[source_int][height - crates_int + i] = 0;
-        }
+        strncpy(stack, crates[source_int] + src_height - crates_int, crates_int);
+        strncpy(crates[source_int] + src_height - crates_int, "\0", crates_int);
+
+        reverse(stack, crates_int);
 
         // dump the crates onto the destination
-        for (int i = 0; i < crates_int; i++) {
-            crates[destination_int][height + i] = stack[i];
+        strncat(crates[destination_int], stack, crates_int);
+
+        // print the crates
+        for (unsigned int i = 0; i < HEAD_LEN; i++) {
+            printf("%d | %s\n", (i + 1), crates[i]);
         }
     }
 }

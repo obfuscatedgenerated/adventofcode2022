@@ -7,18 +7,6 @@
 #define MOVE_LEN 501 // file is 501 lines long
 
 
-void reverse(char arr[], unsigned int n) {
-    char reversed[n];
-
-    for (unsigned int i = 0; i < n; i++) {
-        reversed[n - 1 - i] = arr[i];
-    }
-
-    for (unsigned int i = 0; i < n; i++) {
-        arr[i] = reversed[i];
-    }
-}
-
 int main() {
     FILE *head_handle;
 
@@ -80,9 +68,6 @@ int main() {
         char stack[crates_int];
         strncpy(stack, crates[source_int] + src_height - crates_int, crates_int);
         strncpy(crates[source_int] + src_height - crates_int, "\0", crates_int);
-
-        // reverse the stack
-        reverse(stack, crates_int);
 
         // dump the crates onto the destination
         strncat(crates[destination_int], stack, crates_int);

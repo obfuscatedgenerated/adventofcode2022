@@ -42,6 +42,6 @@ file(COPY src/05/05-moves.txt DESTINATION ${CMAKE_BINARY_DIR})
 # DAY 06
 
 add_executable(06-part1 src/06/part1.c)
-#add_executable(06-part2 src/06/part2.c)
+add_executable(06-part2 src/06/part2.c)
 
 file(COPY src/06/06.txt DESTINATION ${CMAKE_BINARY_DIR})

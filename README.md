@@ -55,3 +55,10 @@ All solutions are tested on Windows 10 (64bit, GCC 12 with MinGW and Ninja) and 
 * [Solution](src/05/)
 
 *Targets: 05-part1, 05-part2*
+
+### 06 - Tuning Trouble
+
+* [Problem](https://adventofcode.com/2022/day/6)
+* [Solution](src/06/)
+
+*Targets: 06-part1, 06-part2*
